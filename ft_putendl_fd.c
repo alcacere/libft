@@ -1,22 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_putendl_fd.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 01:20:14 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 22:20:29 by alcacere         ###   ########.fr       */
+/*   Created: 2025/05/03 22:23:58 by alcacere          #+#    #+#             */
+/*   Updated: 2025/05/03 22:24:04 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+//#include <fcntl.h>
 
-size_t	ft_strlen(const char *str)
+void	ft_putendl_fd(char *s, int fd)
 {
-	size_t	i;
+	int	i;
 
 	i = 0;
-	while (str[i] != '\0')
+	while (s[i])
+	{
+		write(fd, &s[i], 1);
 		i++;
-	return (i);
+	}
+	write(fd, "\n", 1);
 }
+//int main ()
+//{
+//	char *s = "hola chao";
+//	int fd = open("test.txt", O_WRONLY);
+//	ft_putendl_fd(s, fd);
+//	close(fd);
+//}

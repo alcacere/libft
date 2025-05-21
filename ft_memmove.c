@@ -1,32 +1,32 @@
-#include <stddef.h>
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_memmove.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/04/30 02:11:56 by alcacere          #+#    #+#             */
+/*   Updated: 2025/05/03 22:44:03 by alcacere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 void	*ft_memmove(void *dest, const void *src, size_t n)
 {
-	char	*dest_ptr;
-	const char *src_ptr;
-	size_t	i;
+	unsigned char	*d;
+	unsigned char	*s;
 
-	dest_ptr = (char *)dest;
-	src_ptr = (const char *)src;
-	i = 0;
-	if (dest_ptr < src_ptr)
+	if (!dest && !src)
+		return (NULL);
+	d = (unsigned char *)dest;
+	s = (unsigned char *)src;
+	if (s <= d && d < (s + n))
 	{
-		while (i < n)
-		{
-			dest_ptr[i] = src_ptr[i];
-			i++;
-		}
+		while (n--)
+			d[n] = s[n];
 	}
-	else if (dest_ptr > src_ptr)
-	{
-		i = n;
-		while(i > 0)
-		{
-			dest_ptr[i - 1] = src_ptr[i - 1];
-			i--;
-		}
-	}
-	return(dest);
+	else
+		while (n--)
+			*d++ = *s++;
+	return (dest);
 }
-

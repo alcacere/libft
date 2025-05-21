@@ -1,53 +1,39 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/03 22:36:24 by alcacere          #+#    #+#             */
+/*   Updated: 2025/05/04 23:23:35 by alcacere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
-#include <stdio.h>
-int	is_in_set(char c, const char *set)
+
+static int	set_check(char *set, char c)
 {
-	while(*set)
+	while (*set)
 	{
-		if (c == *set)
-			return(1);
+		if (*set == c)
+			return (1);
 		set++;
 	}
-	return(0);
+	return (0);
 }
-char	*strncpy(char *dest, const char *src, size_t n)
-{
-	size_t i;
 
+char	*ft_strtrim(char const *s1, char const *set)
+{
+	size_t	i;
+	size_t	j;
+
+	if (!s1)
+		return (NULL);
 	i = 0;
-	while(i < n && src[i] != '\0')
-	{
-		dest[i] = src[i];
+	j = ft_strlen(s1) - 1;
+	while (s1[i] && set_check((char *)set, s1[i]))
 		i++;
-	}
-	return(dest);
-}
-char *ft_strtrim(const char *s1, const char *set)
-{
-	char *ptr;
-	size_t first;
-	size_t last;
-	size_t len;
-
-	first = 0;
-	while(s1[first] && is_in_set(s1[first], set))
-		first++;
-	last = ft_strlen(s1);
-	while(last > first && is_in_set(s1[last - 1], set))
-		last--;
-	len = last - first;
-	ptr = (char *)malloc(len + 1);
-	if(ptr == NULL)
-		return(NULL);
-	strncpy(ptr, s1 + first, len);
-	ptr[len] = '\0';
-	return (ptr);
-}
-int main ()
-{
-	char str[] = "		hola jajaj!!!";
-	char set[] = "	!";
-	char *result = ft_strtrim(str, set);
-	printf("%s\n", result);
-	free(result);
+	while (s1[j] && set_check((char *)set, s1[j]))
+		j--;
+	return (ft_substr(s1, i, j + 1 - i));
 }
