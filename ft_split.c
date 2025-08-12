@@ -89,20 +89,3 @@ char	**ft_split(char const *s, char c)
 		return (NULL);
 	return (arr);
 }
-//#include <stdio.h>
-//int main ()
-//{
-//	//char *s = "hola! como estas !!";
-//	//char c = ' ';
-//	char **r = ft_split("^^^1^^2a,^^^^3^^^^--h^^^^", '^');
-//	if (r == NULL)
-//		return (printf("null:"), 0);
-//	int i = 0;
-//	while (r[i] != NULL)
-//	{
-//		printf("%s\n", r[i]);
-//		free(r[i]);
-//		i++;
-//	}
-//	free(r);
-//}

@@ -15,6 +15,11 @@
 # include <stddef.h>
 # include <stdlib.h>
 # include <unistd.h>
+# include <stdarg.h>
+
+# ifndef BUFFER_SIZE
+#  define BUFFER_SIZE 7
+# endif
 
 typedef struct s_list
 {
@@ -58,13 +63,36 @@ void	ft_putendl_fd(char *s, int fd);
 void	ft_putnbr_fd(int n, int fd);
 
 t_list	*ft_lstnew(void *content);
-void	ft_lstadd_front(t_list **lst, t_list *new);
+void	ft_lstadd_front(t_list **lst, t_list *new_node);
 int		ft_lstsize(t_list *lst);
 t_list	*ft_lstlast(t_list *lst);
-void	ft_lstadd_back(t_list **lst, t_list *new);
+void	ft_lstadd_back(t_list **lst, t_list *new_node);
 void	ft_lstdelone(t_list *lst, void (*del)(void *));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(void *));
 t_list	*ft_lstmap(t_list *lst, void *(f)(void *), void (*del)(void *));
+
+//get_next_line
+ssize_t	nl_check(char *s, int c);
+char	*get_next_line(int fd);
+void	ft_free(char **stc);
+char	*to_read(int fd, char *stc);
+char	*new_stc(char *stc);
+char	*set_line(char **stc);
+size_t	ft_strlen_gnl(char *str);
+char	*ft_strdup_gnl(char *str);
+char	*ft_strjoin_gnl(char *s1, char *s2);
+char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
+
+
+//ft_peintf
+int		ft_printf(char const *fmt, ...);
+void	fmt_id(char fmt, va_list ap, size_t *printd_cont);
+void	ft_printchar(char c, size_t *printd_cont);
+void	ft_printstr(const char *str, size_t *printd_cont);
+void	ft_printnbr(int n, size_t *printd_cont);
+void	ft_printhex(unsigned long n, size_t *printd_cont, int hex_flag);
+void	ft_printunsig(unsigned int n, size_t *printd_cont);
+void	ft_printptr(void *ptr, size_t *printd_cont);
 
 #endif
