@@ -1,6 +1,17 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf_utils.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alcacere <alcacere@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/22 18:02:58 by alcacere          #+#    #+#             */
+/*   Updated: 2025/09/15 01:10:57 by alcacere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
-void ft_printstr(const char *str, size_t  *printd_cont)
+void	ft_printstr(const char *str, size_t *printd_cont)
 {
 	int	i;
 
@@ -10,7 +21,7 @@ void ft_printstr(const char *str, size_t  *printd_cont)
 		return ;
 	}
 	i = 0;
-	while(str[i])
+	while (str[i])
 	{
 		write(1, &str[i], 1);
 		*printd_cont += 1;
@@ -24,10 +35,10 @@ void	ft_printchar(char c, size_t *printd_cont)
 	*printd_cont += 1;
 }
 
-void    ft_printnbr(int n, size_t *printd_cont)
+void	ft_printnbr(int n, size_t *printd_cont)
 {
 	unsigned int	nb;
-	
+
 	nb = n;
 	if (n < 0)
 	{
@@ -39,16 +50,16 @@ void    ft_printnbr(int n, size_t *printd_cont)
 	{
 		ft_printchar(nb + '0', printd_cont);
 		return ;
-}
-ft_printnbr(nb / 10, printd_cont);
-ft_printchar(nb % 10 + '0', printd_cont);
+	}
+	ft_printnbr(nb / 10, printd_cont);
+	ft_printchar(nb % 10 + '0', printd_cont);
 }
 
 void	ft_printhex(unsigned long n, size_t *printd_cont, int hex_flag)
 {
+	int		unit;
+	int		i;
 	char	hex[17];
-	int	i;
-	int	unit;
 
 	i = 0;
 	unit = 0;
@@ -66,6 +77,6 @@ void	ft_printhex(unsigned long n, size_t *printd_cont, int hex_flag)
 		n /= 16;
 		i++;
 	}
-	while(i--)
+	while (i--)
 		ft_printchar(hex[i], printd_cont);
 }

@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 22:45:57 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/04 12:44:50 by alcacere         ###   ########.fr       */
+/*   Updated: 2025/09/15 01:15:47 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -85,8 +85,7 @@ char	*ft_strdup_gnl(char *str);
 char	*ft_strjoin_gnl(char *s1, char *s2);
 char	*ft_substr_gnl(char *s, unsigned int start, size_t len);
 
-
-//ft_peintf
+//ft_printf
 int		ft_printf(char const *fmt, ...);
 void	fmt_id(char fmt, va_list ap, size_t *printd_cont);
 void	ft_printchar(char c, size_t *printd_cont);

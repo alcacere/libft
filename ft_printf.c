@@ -1,3 +1,14 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_printf.c                                        :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: alcacere <alcacere@student.42madrid.c      +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2025/05/22 17:57:46 by alcacere          #+#    #+#             */
+/*   Updated: 2025/09/15 01:16:39 by alcacere         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
 #include "libft.h"
 
 void	fmt_id(char fmt, va_list ap, size_t *printd_cont)
@@ -25,9 +36,9 @@ void	fmt_id(char fmt, va_list ap, size_t *printd_cont)
 
 int	ft_printf(char const *fmt, ...)
 {
-	size_t	printd_cont;
-	int	i;
-	va_list ap;
+	int			i;
+	size_t		printd_cont;
+	va_list		ap;
 
 	i = 0;
 	printd_cont = 0;
