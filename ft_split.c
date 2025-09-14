@@ -80,7 +80,7 @@ char	**ft_split(char const *s, char c)
 {
 	char	**arr;
 
-	if (s == NULL)
+	if (s == NULL || !*s)
 		return (NULL);
 	arr = malloc(sizeof(char *) * (cont_w((char *)s, c) + 1));
 	if (arr == NULL)
