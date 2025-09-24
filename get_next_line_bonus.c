@@ -81,8 +81,13 @@ char	*set_line(char **stc)
 		line = ft_substr(*stc, 0, ft_strlen(*stc));
 	if (line == NULL)
 		return (ft_free(&(*stc)), NULL);
-	if (index < 0)
+	if (index <= 0)
 		return (ft_free(&(*stc)), line);
+	if (ft_strlen(*stc) > 1 && index >= 0)
+	{
+	    if ((*stc)[index + 1] == '\0')
+		return (ft_free(*stc) line);
+	}
 	*stc = ft_substr(*stc, index + 1, ft_strlen(*stc) - (index + 1));
 	if (*stc == NULL)
 		return (ft_free(&tmp), ft_free(&line), NULL);

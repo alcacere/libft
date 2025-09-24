@@ -31,28 +31,31 @@ OBJS = $(SRCS:.c=.o) $(FT_PRINTF_SRS:.c=.o) $(GNL_SRC:.c=.o)
 BONUS_OBJS = $(BONUS_SRCS:.c=.o)
 
 CC = cc
-C_FLAGS = -Wall -Wextra -Werror
+C_FLAGS = -Wall -Wextra -Werror -g3
 AR = ar
 AR_FLAGS = -rcs
 RM = rm -rf
 
 %.o: %.c
-	$(CC) $(C_FLAGS) -c $< -o $@
+	@$(CC) $(C_FLAGS) -c $< -o $@
 
 $(NAME): $(OBJS)
-	$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
+	@$(AR) $(AR_FLAGS) $(NAME) $(OBJS)
+	@echo "COMPILED"
 
 bonus: $(OBJS) $(BONUS_OBJS)
-	$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+	@$(AR) $(AR_FLAGS) $(NAME) $(OBJS) $(BONUS_OBJS)
+	@echo "BONUS COMPILED"
 
 all: $(OBJS) $(NAME)
 
 re: fclean all
 
 clean:
-	$(RM) $(OBJS) $(BONUS_OBJS)
+	@$(RM) $(OBJS) $(BONUS_OBJS)
+	@echo "CLEANING OBJS"
 
 fclean:
-	$(RM) $(NAME) $(OBJS) $(BONUS_OBJS)
-
+	@$(RM) $(NAME) $(OBJS) $(BONUS_OBJS)
+	@echo "CLEANING OBJS AND .a"
 .PHONY: all clean fclean re bonus
