@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:18:56 by alcacere          #+#    #+#             */
-/*   Updated: 2025/09/24 13:55:50 by alcacere         ###   ########.fr       */
+/*   Updated: 2025/09/25 14:47:53 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -86,7 +86,7 @@ char	*set_line(char **stc)
 	if (ft_strlen(*stc) > 1 && index >= 0)
 	{
 		if ((*stc)[index + 1] == '\0')
-			return (ft_free(*stc), line);
+			return (ft_free(stc), line);
 	}
 	*stc = ft_substr(*stc, index + 1, ft_strlen(*stc) - (index + 1));
 	if (*stc == NULL)
