@@ -6,11 +6,11 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 00:11:45 by alcacere          #+#    #+#             */
-/*   Updated: 2026/01/14 10:30:24 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:39:51 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
 #include "libft.h"
-#include "ft_string.h"
 
 char	*ft_strjoin(const char *s1, const char *s2)
 {
@@ -37,4 +37,3 @@ char	*ft_strjoin(const char *s1, const char *s2)
 	}
 	return (*new_str = '\0', new_str - total_len);
 }
-

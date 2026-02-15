@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 09:26:42 by alcacere          #+#    #+#             */
-/*   Updated: 2026/02/15 09:28:21 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/02/15 12:52:32 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,8 +84,12 @@ static char	*get_line(t_gnl_state *state, ssize_t nl_index)
 	line[len] = '\0';
 	state->len -= len;
 	if (state->len > 0)
+	{
 		ft_memcpy(state->buffer, state->buffer + len, state->len);
-	state->buffer[state->len] = '\0';
+		state->buffer[state->len] = '\0';
+	}
+	else
+		free_state(state);
 	return (line);
 }
 

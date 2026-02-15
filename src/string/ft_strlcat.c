@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/01 20:48:21 by alcacere          #+#    #+#             */
-/*   Updated: 2026/01/14 10:30:30 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/02/15 19:39:01 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -28,4 +28,3 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	*d = '\0';
 	return (dst_len + src_len);
 }
-
