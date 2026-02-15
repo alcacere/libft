@@ -6,10 +6,11 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 20:13:55 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/04 18:15:10 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/01/14 10:29:41 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
 static int	cont_w(char *s, char c)
 {
@@ -64,10 +65,7 @@ static char	**alloc_arr(char **arr, char const *s, char c)
 		{
 			*tmp_arr = ft_substr(s, 0, tmp_s - s);
 			if (*tmp_arr == NULL)
-			{
-				free_arr(arr);
-				return (NULL);
-			}
+				return (free_arr(arr), NULL);
 			s = tmp_s;
 			tmp_arr++;
 		}
@@ -85,7 +83,5 @@ char	**ft_split(char const *s, char c)
 	arr = malloc(sizeof(char *) * (cont_w((char *)s, c) + 1));
 	if (arr == NULL)
 		return (NULL);
-	if (alloc_arr(arr, s, c) == NULL)
-		return (NULL);
-	return (arr);
+	return (alloc_arr(arr, s, c));
 }

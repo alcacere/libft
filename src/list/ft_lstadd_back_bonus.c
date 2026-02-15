@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/02 21:02:58 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 00:53:06 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/02/04 16:34:03 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -25,7 +25,7 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 		tmp = tmp->next;
 	tmp->next = new;
 }
-//
+
 //int main ()
 //{
 //	t_list	*lst = NULL;

@@ -6,10 +6,11 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 15:11:56 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/01 23:08:57 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/01/14 10:30:57 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
 {

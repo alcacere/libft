@@ -6,10 +6,11 @@
 /*   By: alcacere <alcacere@student.42madrid.c      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/15 17:18:56 by alcacere          #+#    #+#             */
-/*   Updated: 2025/09/25 14:47:53 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/01/14 10:39:38 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
 void	ft_free(char **stc);
 char	*to_read(int fd, char *stc);

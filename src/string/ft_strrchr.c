@@ -1,25 +1,30 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 13:59:33 by alcacere          #+#    #+#             */
-/*   Updated: 2025/04/30 13:59:39 by alcacere         ###   ########.fr       */
+/*   Created: 2025/05/01 14:48:31 by alcacere          #+#    #+#             */
+/*   Updated: 2026/01/14 10:31:02 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
-char	*ft_strchr(const char *s, int c)
+char	*ft_strrchr(const char *s, int c)
 {
-	while (*s)
+	char	*tmp;
+
+	tmp = (char *)s + ft_strlen(s);
+	if ((char)c == '\0')
+		return (tmp);
+	while (tmp >= s)
 	{
-		if (*s == (char)c)
-			return ((char *)&*s);
-		s++;
+		if (*tmp == (char)c)
+			return (tmp);
+		tmp--;
 	}
-	if (!(char)c)
-		return ((char *)s);
-	return (0);
+	return (NULL);
 }
+

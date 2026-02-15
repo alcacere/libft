@@ -6,10 +6,11 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/24 13:54:01 by alcacere          #+#    #+#             */
-/*   Updated: 2025/09/24 13:54:06 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/01/14 10:30:07 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
 int	ft_strcmp(const char *s1, const char *s2)
 {

@@ -1,22 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlen.c                                        :+:      :+:    :+:   */
+/*   ft_strdup.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 01:20:14 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 22:20:29 by alcacere         ###   ########.fr       */
+/*   Created: 2025/05/03 22:23:10 by alcacere          #+#    #+#             */
+/*   Updated: 2026/01/14 10:30:13 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
-size_t	ft_strlen(const char *str)
+char	*ft_strdup(const char *s)
 {
-	size_t	i;
+	char	*result;
+	size_t	len;
 
-	i = 0;
-	while (str[i] != '\0')
-		i++;
-	return (i);
+	len = ft_strlen(s);
+	result = (char *)malloc(len + 1);
+	if (result == NULL)
+		return (NULL);
+	while (*s)
+	{
+		*result = *(char *)s;
+		result++;
+		s++;
+	}
+	*result = '\0';
+	return (result - len);
 }
+//int main ()
+//{
+//	char *s = "hola qque tal";
+//	char *r = ft_strdup(s);
+//	printf("%s\n", r);
+//}

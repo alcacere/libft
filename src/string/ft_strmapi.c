@@ -6,10 +6,11 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/04/30 22:06:40 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/02 00:09:47 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/01/14 10:30:46 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
 //char	f_toupper(unsigned int i, char c)
 //{

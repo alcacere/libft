@@ -1,37 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strlcat.c                                       :+:      :+:    :+:   */
+/*   ft_lstdelone_bonus.c                               :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/05/01 20:48:21 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 22:40:19 by alcacere         ###   ########.fr       */
+/*   Created: 2025/05/02 21:20:15 by alcacere          #+#    #+#             */
+/*   Updated: 2026/02/15 09:44:34 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-size_t	ft_strlcat(char *dst, const char *src, size_t size)
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
 {
-	size_t	dst_len;
-	size_t	src_len;
-	size_t	i;
-	size_t	j;
-
-	dst_len = ft_strlen(dst);
-	src_len = ft_strlen(src);
-	i = dst_len;
-	j = 0;
-	if (size == 0)
-		return (src_len);
-	if (size <= dst_len)
-		return (src_len + size);
-	while (src[j] != '\0' && j < (size - dst_len - 1))
-	{
-		dst[i] = src[j];
-		i++;
-		j++;
-	}
-	dst[i] = '\0';
-	return (dst_len + src_len);
+	if (!lst || !del)
+		return ;
+	del(lst->content);
+	free(lst);
 }

@@ -1,35 +1,39 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memcpy.c                                        :+:      :+:    :+:   */
+/*   ft_substr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 02:05:07 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 22:24:49 by alcacere         ###   ########.fr       */
+/*   Created: 2025/04/30 15:54:41 by alcacere          #+#    #+#             */
+/*   Updated: 2026/02/15 09:43:11 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
+#include "ft_string.h"
 
-void	*ft_memcpy(void *dest, const void *src, size_t n)
+char	*ft_substr(const char *s, unsigned int start, size_t len)
 {
-	unsigned char	*d;
-	unsigned char	*s;
+	size_t	s_len;
+	char	*sub;
 
-	if (!dest && !src)
+	if (!s)
 		return (NULL);
-	s = (unsigned char *)src;
-	d = (unsigned char *)dest;
-	while (n--)
-		*d++ = *s++;
-	return (dest);
+	s_len = ft_strlen(s);
+	if (start >= s_len)
+		return (ft_strdup(""));
+	if (len >= (s_len - start))
+		len = s_len - start;
+	sub = (char *)malloc((len + 1) * sizeof(char));
+	if (!sub)
+		return (NULL);
+	s += start;
+	s_len = len;
+	while (*s && s_len)
+	{
+		*sub = *s;
+		s_len--;
+	}
+	*sub = '\0';
+	return (sub - len);
 }
-//
-//int main ()
-//{
-//	char s[] = "hola que tal";
-//	char d[20];
-//
-//	ft_memcpy(d, s, 12);
-//	printf("%s\n", d);
-//}

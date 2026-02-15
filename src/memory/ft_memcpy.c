@@ -1,38 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_substr.c                                        :+:      :+:    :+:   */
+/*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/04/30 15:54:41 by alcacere          #+#    #+#             */
-/*   Updated: 2025/05/03 22:25:53 by alcacere         ###   ########.fr       */
+/*   Created: 2025/04/30 02:05:07 by alcacere          #+#    #+#             */
+/*   Updated: 2026/02/15 09:22:44 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
 
-char	*ft_substr(const char *s, unsigned int start, size_t len)
+void	*ft_memcpy(void *dst, const void *src, size_t n)
 {
-	size_t	i;
-	size_t	s_len;
-	char	*sub;
+	unsigned char		*d;
+	const unsigned char	*s;
 
-	if (!s)
+	if (!dst && !src)
 		return (NULL);
-	i = 0;
-	s_len = ft_strlen(s);
-	if (start >= s_len)
-		return (ft_strdup(""));
-	if (len >= (s_len - start))
-		len = s_len - start;
-	sub = (char *)malloc((len + 1) * sizeof(char));
-	if (!sub)
-		return (NULL);
-	while (s[i])
-	{
-		if (i == start)
-			return (ft_strlcpy(sub, &s[i], len + 1), sub);
-		i++;
-	}
-	return (sub);
+	d = (unsigned char *)dst;
+	s = (const unsigned char *)src;
+	while (n--)
+		*d++ = *s++;
+	return (dst);
 }
+
+//
+//int main ()
+//{
+//	char s[] = "hola que tal";
+//	char d[20];
+//
+//	ft_memcpy(d, s, 12);
+//	printf("%s\n", d);
+//}
