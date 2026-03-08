@@ -6,7 +6,7 @@
 /*   By: alcacere <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/09/15 00:51:09 by alcacere          #+#    #+#             */
-/*   Updated: 2025/09/15 00:51:27 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/03/08 15:48:46 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #include "libft.h"
@@ -15,6 +15,8 @@ void	ft_free_arr(char **arr)
 {
 	int	i;
 
+	if (!arr)
+		return ;
 	i = 0;
 	while (arr[i] != NULL)
 	{

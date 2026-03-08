@@ -6,13 +6,15 @@
 /*   By: alcacere <alcacere@student.42madrid.com>   +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2026/02/15 19:34:51 by alcacere          #+#    #+#             */
-/*   Updated: 2026/02/15 19:36:00 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/03/08 15:49:12 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_CTYPE_H
 
 # define FT_CTYPE_H
+
+# include "libft.h"
 
 int	ft_isalnum(int c);
 int	ft_isalpha(int c);

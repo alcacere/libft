@@ -6,7 +6,7 @@
 /*   By: alcacere <alcacere@student42madrid.co      +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/05/03 22:45:57 by alcacere          #+#    #+#             */
-/*   Updated: 2026/02/15 19:35:37 by alcacere         ###   ########.fr       */
+/*   Updated: 2026/02/16 10:27:28 by alcacere         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 #ifndef LIBFT_H
@@ -16,7 +16,7 @@
 # include <stdlib.h>
 # include <unistd.h>
 # include <stdarg.h>
-# include "ctype.h"
+# include "ft_ctype.h"
 # include "ft_string.h"
 # include "get_next_line.h"
 
